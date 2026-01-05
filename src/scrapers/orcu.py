@@ -19,7 +19,12 @@ class OrcuScraper(BaseScraper):
                 'operacion': 'A',
                 'tipos[]': '2',
                 'dormitorios[]': '2',
-                'cochera': '0'
+                'cochera': '0',
+                'zonas[]': 'CANDIOTI NORTE',
+                'zonas[]': 'CANDIOTI SUR',
+                'zonas[]': 'COSTANERA VIEJA',
+                'zonas[]': 'GUADALUPE SUR',
+                'zonas[]': 'SARGENTO CABRAL',
             }
             
             response = requests.post(self.url_base, headers=headers, data=payload)
@@ -49,6 +54,12 @@ class OrcuScraper(BaseScraper):
                     if not link_tag:
                         continue
                     link = link_tag['href']
+
+                    # Buscamos la descripción
+                    description_tag = card.find('p', class_='card-text')
+                    if not description_tag:
+                        continue
+                    descripcion = description_tag.text.strip()
                     
                     # El ID está en la URL: .../detalles/12345/TITULO...
                     try:
@@ -63,6 +74,7 @@ class OrcuScraper(BaseScraper):
                     resultados_normalizados.append({
                         'id': f"ORCU_{id_publicacion}",
                         'titulo': titulo,
+                        'descripcion': descripcion,
                         'precio': precio,
                         'link': link,
                         'portal': 'Orcu Inmobiliaria'

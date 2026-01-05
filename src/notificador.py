@@ -38,6 +38,7 @@ class Notificador:
             f"🏠 *NUEVO DEPARTAMENTO ENCONTRADO*\n\n"
             f"💰 *Precio:* {propiedad['precio']}\n"
             f"📍 *Título:* {propiedad['titulo']}\n"
+            f"🗒️ *Descripción:* {propiedad['descripcion']}\n"
             f"🔗 [Ver en {propiedad['portal']}]({propiedad['link']})"
         )
         
