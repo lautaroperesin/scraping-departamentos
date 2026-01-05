@@ -1,0 +1,11 @@
+# 1. Seguridad (CRÍTICO)
+.env
+
+# 2. Entorno Virtual y Compilados de Python
+venv/
+__pycache__/
+*.pyc
+
+# 3. Archivos del sistema operativo (basura)
+.DS_Store
+Thumbs.db
