@@ -1,12 +1,14 @@
 from src.scrapers.orcu import OrcuScraper
+from src.scrapers.salas import SalasScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
 # URLs
 URL_ORCU = "https://www.orcuinmobiliaria.com.ar/resultados"
+URL_SALAS = "https://www.salasinmobiliaria.com.ar/listado.php?id_operacion=3&id_zona=36&id_tipo=5&dormitorios=2&codigo=&rango=0%3B770000"
 
 def main():
-    print(f"[{time.strftime('%H:%M:%S')}] Iniciando búsqueda...")
+    print("Iniciando búsqueda...")
     
     # 1. Instanciamos el gestor (cargará el JSON automáticamente) y el notificador
     gestor = GestorDatos()
@@ -14,6 +16,7 @@ def main():
     
     scrapers = [
         OrcuScraper(URL_ORCU),
+        SalasScraper(URL_SALAS),
     ]
 
     nuevos_hallazgos = []
