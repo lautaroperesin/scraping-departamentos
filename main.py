@@ -9,6 +9,9 @@ from src.scrapers.menzella import MenzellaScraper
 # from src.scrapers.mercado_unico import MercadoUnicoScraper
 from src.scrapers.migone import MigoneScraper
 from src.scrapers.argenprop import ArgenpropScraper
+from src.scrapers.christen import ChristenScraper
+from src.scrapers.esquivel import EsquivelScraper
+from src.scrapers.samar import SamarScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -24,11 +27,14 @@ URL_MENZELLA = "https://www.menzellainmobiliaria.com.ar/?u=208&pag=propiedades&o
 # URL_MERCADO_UNICO = "https://www.mercado-unico.com/propiedades?tipoOperacion=58f554bf615347788ff291d2&tipoPropiedad=58f5563d988e744fda7edae3&dormitorios=2&ciudad=58bac0b35a9f803452303225&moneda=%24"
 URL_MIGONE = "https://www.migoneinmobiliaria.com.ar/propiedades?p=0&b=All&ope=A&tipo=D&a1=2&cod="
 URL_ARGENPROP = "https://www.argenprop.com/departamentos/alquiler/santa-fe-la-capital/2-dormitorios/pesos-hasta-750000?&solo-ver-pesos"
-# URL_CHRISTEN = ""
-# URL_ALIANZA = ""
+URL_CHRISTEN = "https://www.christen.com.ar/Buscar?operation=2&ptypes=2&tags=3&suites=2&o=2,2&1=1"
 # URL_SAUCE = ""
 # URL_CASABLANCA = ""
-# URL_ESQUIVEL = ""
+URL_URBANO = "https://urbano-inmobiliaria.com/web/alquileres.php"
+# URL_GIMENEZ = "https://www.gimenezinmobiliaria.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=508&shortBy=null&min_price=&max_price="
+URL_ESQUIVEL = "https://www.esquivelinmobiliaria.com.ar/resultados.php?bus=av&op=A&tipo=1&zona=&dor=2"
+URL_SAMAR = "https://www.samarpropiedades.com.ar/alquileres/"
+
 
 def main():
     print("Iniciando búsqueda...")
@@ -46,9 +52,11 @@ def main():
         BottaiScraper(URL_BOTTAI),
         TavernaScraper(URL_TAVERNA),
         MenzellaScraper(URL_MENZELLA),
-        #MercadoUnicoScraper(URL_MERCADO_UNICO),
         MigoneScraper(URL_MIGONE),
         ArgenpropScraper(URL_ARGENPROP),
+        ChristenScraper(URL_CHRISTEN),
+        EsquivelScraper(URL_ESQUIVEL),
+        SamarScraper(URL_SAMAR)
     ]
 
     nuevos_hallazgos = []
