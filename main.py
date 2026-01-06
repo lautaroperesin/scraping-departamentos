@@ -1,6 +1,14 @@
 from src.scrapers.orcu import OrcuScraper
 from src.scrapers.salas import SalasScraper
 from src.scrapers.benuzzi import BenuzziScraper
+from src.scrapers.remax import RemaxScraper
+from src.scrapers.guastavino import GuastavinoScraper
+from src.scrapers.bottai import BottaiScraper
+from src.scrapers.taverna import TavernaScraper
+from src.scrapers.menzella import MenzellaScraper
+# from src.scrapers.mercado_unico import MercadoUnicoScraper
+from src.scrapers.migone import MigoneScraper
+from src.scrapers.argenprop import ArgenpropScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -8,6 +16,19 @@ from src.notificador import Notificador
 URL_ORCU = "https://www.orcuinmobiliaria.com.ar/resultados"
 URL_SALAS = "https://www.salasinmobiliaria.com.ar/listado.php?id_operacion=3&id_zona=36&id_tipo=5&dormitorios=2&codigo=&rango=0%3B770000"
 URL_BENUZZI = "https://benuzzi.com/search-properties/?status%5B%5D=alquiler&type%5B%5D=departamento&bedrooms=2"
+URL_REMAX = "https://www.remax.com.ar/listings/rent?page=0&pageSize=24&sort=-createdAt&in:operationId=2&eq:entrepreneurship=false&in:typeId=1,2,3,4,5,6,7,8&pricein=2:0:750000&eq:bedrooms=2&locations=in:::458@%3Cb%3ESanta%3C%2Fb%3E%20%3Cb%3EFe%3C%2Fb%3E%20Capital::::&landingPath=&filterCount=4&viewMode=listViewMode"
+URL_GUASTAVINO = "https://guastavinoeimbert.com.ar/properties-search/?location%5B%5D=santa-fe&type%5B%5D=departamentos&status=alquiler&bedrooms=2"
+URL_BOTTAI = "https://www.bottai.com.ar/inmuebles_list_Alquiler_Departamentos_2-dormitorios_seleccione_0_0"
+URL_TAVERNA = "https://tavernainmobiliaria.com.ar/search-results/?status%5B%5D=alquiler&type%5B%5D=departamento&bedrooms=2&country%5B%5D=con-cochera"
+URL_MENZELLA = "https://www.menzellainmobiliaria.com.ar/?u=208&pag=propiedades&op=2&idtipo2=777&idciudad=2013&idbarrio=0&dorm=0&banios=0&moneda=1&desde=&hasta=&searcher_code="
+# URL_MERCADO_UNICO = "https://www.mercado-unico.com/propiedades?tipoOperacion=58f554bf615347788ff291d2&tipoPropiedad=58f5563d988e744fda7edae3&dormitorios=2&ciudad=58bac0b35a9f803452303225&moneda=%24"
+URL_MIGONE = "https://www.migoneinmobiliaria.com.ar/propiedades?p=0&b=All&ope=A&tipo=D&a1=2&cod="
+URL_ARGENPROP = "https://www.argenprop.com/departamentos/alquiler/santa-fe-la-capital/2-dormitorios/pesos-hasta-750000?&solo-ver-pesos"
+# URL_CHRISTEN = ""
+# URL_ALIANZA = ""
+# URL_SAUCE = ""
+# URL_CASABLANCA = ""
+# URL_ESQUIVEL = ""
 
 def main():
     print("Iniciando búsqueda...")
@@ -20,6 +41,14 @@ def main():
         OrcuScraper(URL_ORCU),
         SalasScraper(URL_SALAS),
         BenuzziScraper(URL_BENUZZI),
+        RemaxScraper(URL_REMAX),
+        GuastavinoScraper(URL_GUASTAVINO),
+        BottaiScraper(URL_BOTTAI),
+        TavernaScraper(URL_TAVERNA),
+        MenzellaScraper(URL_MENZELLA),
+        #MercadoUnicoScraper(URL_MERCADO_UNICO),
+        MigoneScraper(URL_MIGONE),
+        ArgenpropScraper(URL_ARGENPROP),
     ]
 
     nuevos_hallazgos = []
