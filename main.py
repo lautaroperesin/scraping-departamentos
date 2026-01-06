@@ -12,6 +12,7 @@ from src.scrapers.argenprop import ArgenpropScraper
 from src.scrapers.christen import ChristenScraper
 from src.scrapers.esquivel import EsquivelScraper
 from src.scrapers.samar import SamarScraper
+from src.scrapers.gimenez import GimenezScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -31,7 +32,7 @@ URL_CHRISTEN = "https://www.christen.com.ar/Buscar?operation=2&ptypes=2&tags=3&s
 # URL_SAUCE = ""
 # URL_CASABLANCA = ""
 URL_URBANO = "https://urbano-inmobiliaria.com/web/alquileres.php"
-# URL_GIMENEZ = "https://www.gimenezinmobiliaria.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=508&shortBy=null&min_price=&max_price="
+URL_GIMENEZ = "https://www.gimenezinmobiliaria.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=508&shortBy=null&min_price=&max_price="
 URL_ESQUIVEL = "https://www.esquivelinmobiliaria.com.ar/resultados.php?bus=av&op=A&tipo=1&zona=&dor=2"
 URL_SAMAR = "https://www.samarpropiedades.com.ar/alquileres/"
 
@@ -56,7 +57,8 @@ def main():
         ArgenpropScraper(URL_ARGENPROP),
         ChristenScraper(URL_CHRISTEN),
         EsquivelScraper(URL_ESQUIVEL),
-        SamarScraper(URL_SAMAR)
+        SamarScraper(URL_SAMAR),
+        GimenezScraper(URL_GIMENEZ)
     ]
 
     nuevos_hallazgos = []
