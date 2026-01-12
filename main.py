@@ -13,6 +13,8 @@ from src.scrapers.christen import ChristenScraper
 from src.scrapers.esquivel import EsquivelScraper
 from src.scrapers.samar import SamarScraper
 from src.scrapers.gimenez import GimenezScraper
+from src.scrapers.sauce import SauceScraper
+from src.scrapers.penalva import PenalvaScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -25,16 +27,15 @@ URL_GUASTAVINO = "https://guastavinoeimbert.com.ar/properties-search/?location%5
 URL_BOTTAI = "https://www.bottai.com.ar/inmuebles_list_Alquiler_Departamentos_2-dormitorios_seleccione_0_0"
 URL_TAVERNA = "https://tavernainmobiliaria.com.ar/search-results/?status%5B%5D=alquiler&type%5B%5D=departamento&bedrooms=2&country%5B%5D=con-cochera"
 URL_MENZELLA = "https://www.menzellainmobiliaria.com.ar/?u=208&pag=propiedades&op=2&idtipo2=777&idciudad=2013&idbarrio=0&dorm=0&banios=0&moneda=1&desde=&hasta=&searcher_code="
-# URL_MERCADO_UNICO = "https://www.mercado-unico.com/propiedades?tipoOperacion=58f554bf615347788ff291d2&tipoPropiedad=58f5563d988e744fda7edae3&dormitorios=2&ciudad=58bac0b35a9f803452303225&moneda=%24"
 URL_MIGONE = "https://www.migoneinmobiliaria.com.ar/propiedades?p=0&b=All&ope=A&tipo=D&a1=2&cod="
 URL_ARGENPROP = "https://www.argenprop.com/departamentos/alquiler/santa-fe-la-capital/2-dormitorios/pesos-hasta-750000?&solo-ver-pesos"
 URL_CHRISTEN = "https://www.christen.com.ar/Buscar?operation=2&ptypes=2&tags=3&suites=2&o=2,2&1=1"
-# URL_SAUCE = ""
-# URL_CASABLANCA = ""
+URL_SAUCE = "https://www.sauce.com.ar/properties/?filter-contract=RENT&filter-property-type=24&filter-location=&filter-rooms=2"
 URL_URBANO = "https://urbano-inmobiliaria.com/web/alquileres.php"
 URL_GIMENEZ = "https://www.gimenezinmobiliaria.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=508&shortBy=null&min_price=&max_price="
 URL_ESQUIVEL = "https://www.esquivelinmobiliaria.com.ar/resultados.php?bus=av&op=A&tipo=1&zona=&dor=2"
 URL_SAMAR = "https://www.samarpropiedades.com.ar/alquileres/"
+URL_PENALVA = "https://penalvainmobiliaria.com.ar/resultados/?property-id&location=santa-fe&status=alquiler&type=departamentos&bedrooms=2"
 
 
 def main():
@@ -58,7 +59,9 @@ def main():
         ChristenScraper(URL_CHRISTEN),
         EsquivelScraper(URL_ESQUIVEL),
         SamarScraper(URL_SAMAR),
-        GimenezScraper(URL_GIMENEZ)
+        GimenezScraper(URL_GIMENEZ),
+        SauceScraper(URL_SAUCE),
+        PenalvaScraper(URL_PENALVA)
     ]
 
     nuevos_hallazgos = []
