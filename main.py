@@ -6,7 +6,6 @@ from src.scrapers.guastavino import GuastavinoScraper
 from src.scrapers.bottai import BottaiScraper
 from src.scrapers.taverna import TavernaScraper
 from src.scrapers.menzella import MenzellaScraper
-# from src.scrapers.mercado_unico import MercadoUnicoScraper
 from src.scrapers.migone import MigoneScraper
 from src.scrapers.argenprop import ArgenpropScraper
 from src.scrapers.christen import ChristenScraper
@@ -15,6 +14,17 @@ from src.scrapers.samar import SamarScraper
 from src.scrapers.gimenez import GimenezScraper
 from src.scrapers.sauce import SauceScraper
 from src.scrapers.penalva import PenalvaScraper
+from src.scrapers.royo import RoyoScraper
+from src.scrapers.alicandro import AlicandroScraper
+from src.scrapers.raffin import RaffinScraper
+from src.scrapers.weidmann import WeidmannScraper
+from src.scrapers.adminymandatos import AdminymandatosScraper
+from src.scrapers.lenarduzzi import LenarduzziScraper
+from src.scrapers.uretacortes import UretacortesScraper
+from src.scrapers.apl import AplScraper
+from src.scrapers.sarricchio import SarricchioScraper
+from src.scrapers.santafe_propiedades import SantaFePropiedadesScraper
+from src.scrapers.concepto import ConceptoScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -36,6 +46,17 @@ URL_GIMENEZ = "https://www.gimenezinmobiliaria.com.ar/listing?state=21&city=1243
 URL_ESQUIVEL = "https://www.esquivelinmobiliaria.com.ar/resultados.php?bus=av&op=A&tipo=1&zona=&dor=2"
 URL_SAMAR = "https://www.samarpropiedades.com.ar/alquileres/"
 URL_PENALVA = "https://penalvainmobiliaria.com.ar/resultados/?property-id&location=santa-fe&status=alquiler&type=departamentos&bedrooms=2"
+URL_ROYO = "https://www.royoinmobiliaria.com.ar/Buscar?operation=2&ptypes=2&suites=2&o=2,2&1=1"
+URL_LENARDUZZI = "https://lenarduzzi.com.ar/half-map/?location=santa-fe&type=departamento&status=alquiler&bedrooms=2"
+URL_RAFFIN = "https://www.raffininmobiliaria.com.ar/listing?state=21&city=12432&purpose=rent&type=&beds=2&q=&user_id=1137&shortBy=null&min_price=&max_price="
+URL_APL = "https://www.aplinmobiliaria.com/propiedades?operacion=58f554bf615347788ff291d2&franquicia=&ciudad%5B%5D=58bac0b35a9f803452303225&tipo_propiedad%5B%5D=58f5563d988e744fda7edae3&dormitorios=2&moneda=%24&min=&max="
+URL_CONCEPTO = "https://www.conceptonegociosinmobiliarios.com.ar/Buscar-Departamento-en-Alquiler?suites=2"
+URL_SARRICCHIO = "https://sarricchio.com/index.php?operation_type=2&id_tipo_propiedad=1&numero_ambientes_propiedad=2&id_localidad=&Itemid=101&option=com_siiweb&view=properties&mod_inteliarsii_search=1"
+URL_WEIDMANN = "https://inmobiliariaweidmann.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=416&shortBy=null&min_price=&max_price="
+URL_ALICANDRO = "https://www.alicandro.com.ar/Buscar?operation=2&ptypes=2&suites=2&o=2,2&1=1"
+URL_URETACORTES = "https://uretacortes.com.ar/?s=&tipo=departamento&operacion=alquiler&location=santa-fe&moneda=pesos&price_low=&price_high="
+URL_SANTAFE_PROPIEDADES = "https://www.santafe-propiedades.com.ar/resultados.php?descripcion=&tipoPropiedad=2&barrio=0&tipo=A"
+URL_ADMINYMANDATOS = "https://administracionesymandatos.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=1566&shortBy=null&min_price=&max_price="
 
 
 def main():
@@ -61,7 +82,18 @@ def main():
         SamarScraper(URL_SAMAR),
         GimenezScraper(URL_GIMENEZ),
         SauceScraper(URL_SAUCE),
-        PenalvaScraper(URL_PENALVA)
+        PenalvaScraper(URL_PENALVA),
+        RoyoScraper(URL_ROYO),
+        LenarduzziScraper(URL_LENARDUZZI),
+        RaffinScraper(URL_RAFFIN),
+        AplScraper(URL_APL),
+        ConceptoScraper(URL_CONCEPTO),
+        SarricchioScraper(URL_SARRICCHIO),
+        WeidmannScraper(URL_WEIDMANN),
+        AlicandroScraper(URL_ALICANDRO),
+        UretacortesScraper(URL_URETACORTES),
+        SantaFePropiedadesScraper(URL_SANTAFE_PROPIEDADES),
+        AdminymandatosScraper(URL_ADMINYMANDATOS)
     ]
 
     nuevos_hallazgos = []
