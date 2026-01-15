@@ -25,6 +25,7 @@ from src.scrapers.apl import AplScraper
 from src.scrapers.sarricchio import SarricchioScraper
 from src.scrapers.santafe_propiedades import SantaFePropiedadesScraper
 from src.scrapers.concepto import ConceptoScraper
+from src.scrapers.cofasa import CofasaScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -57,6 +58,7 @@ URL_ALICANDRO = "https://www.alicandro.com.ar/Buscar?operation=2&ptypes=2&suites
 URL_URETACORTES = "https://uretacortes.com.ar/?s=&tipo=departamento&operacion=alquiler&location=santa-fe&moneda=pesos&price_low=&price_high="
 URL_SANTAFE_PROPIEDADES = "https://www.santafe-propiedades.com.ar/resultados.php?descripcion=&tipoPropiedad=2&barrio=0&tipo=A"
 URL_ADMINYMANDATOS = "https://administracionesymandatos.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=1566&shortBy=null&min_price=&max_price="
+URL_COFASA = "https://www.cofasainmobiliaria.com.ar/Buscar-Departamento-en-Alquiler-en-Santa-Fe-45679?suites=2"
 
 
 def main():
@@ -93,7 +95,8 @@ def main():
         AlicandroScraper(URL_ALICANDRO),
         UretacortesScraper(URL_URETACORTES),
         SantaFePropiedadesScraper(URL_SANTAFE_PROPIEDADES),
-        AdminymandatosScraper(URL_ADMINYMANDATOS)
+        AdminymandatosScraper(URL_ADMINYMANDATOS),
+        CofasaScraper(URL_COFASA)
     ]
 
     nuevos_hallazgos = []
