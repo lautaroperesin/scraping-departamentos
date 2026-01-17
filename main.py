@@ -26,6 +26,7 @@ from src.scrapers.sarricchio import SarricchioScraper
 from src.scrapers.santafe_propiedades import SantaFePropiedadesScraper
 from src.scrapers.concepto import ConceptoScraper
 from src.scrapers.cofasa import CofasaScraper
+from src.scrapers.pino_maglione import PinoMaglioneScraper
 from src.gestor_datos import GestorDatos
 from src.notificador import Notificador
 
@@ -59,6 +60,7 @@ URL_URETACORTES = "https://uretacortes.com.ar/?s=&tipo=departamento&operacion=al
 URL_SANTAFE_PROPIEDADES = "https://www.santafe-propiedades.com.ar/resultados.php?descripcion=&tipoPropiedad=2&barrio=0&tipo=A"
 URL_ADMINYMANDATOS = "https://administracionesymandatos.com.ar/listing?state=21&city=12432&purpose=rent&type=Departamento&beds=2&q=&user_id=1566&shortBy=null&min_price=&max_price="
 URL_COFASA = "https://www.cofasainmobiliaria.com.ar/Buscar-Departamento-en-Alquiler-en-Santa-Fe-45679?suites=2"
+URL_PINOMAGLIONE = "https://www.pinomaglione.com.ar/Buscar-Departamento-en-Alquiler-en-Santa-Fe-170"
 
 
 def main():
@@ -96,7 +98,8 @@ def main():
         UretacortesScraper(URL_URETACORTES),
         SantaFePropiedadesScraper(URL_SANTAFE_PROPIEDADES),
         AdminymandatosScraper(URL_ADMINYMANDATOS),
-        CofasaScraper(URL_COFASA)
+        CofasaScraper(URL_COFASA),
+        PinoMaglioneScraper(URL_PINOMAGLIONE)
     ]
 
     nuevos_hallazgos = []
